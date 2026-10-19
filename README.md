@@ -2,6 +2,10 @@
 
 Trang chủ cá nhân tổng hợp các website của **Trường Đại học Công nghệ Thông tin – ĐHQG-HCM (UIT)**, chạy trực tiếp trên máy của bạn bằng **React + Vite**.
 
+Tác giả: **Bùi Mạnh Cường**.\
+MSSV: **26520212**.\
+Lớp sinh hoạt: **KHMT2026.1**.
+
 > Đây là dự án cá nhân, **không phải** trang chính thức của trường.
 
 ## Tính năng
@@ -17,12 +21,12 @@ Trang chủ cá nhân tổng hợp các website của **Trường Đại học C
 
 | Trang | Địa chỉ |
 | --- | --- |
-| Portal UIT | https://portal.uit.edu.vn/ |
-| Trang sinh viên | https://student.uit.edu.vn/ |
-| Phòng Kế hoạch - Tài chính | https://khtc.uit.edu.vn/ |
-| Công tác sinh viên | https://ctsv.uit.edu.vn/ |
-| Fanpage UIT | https://www.facebook.com/UIT.Fanpage |
-| Cộng đồng sinh viên | https://www.facebook.com/share/g/1K6MtN9NEf/ |
+| Portal UIT | <https://portal.uit.edu.vn/> |
+| Trang sinh viên | <https://student.uit.edu.vn/> |
+| Phòng Kế hoạch - Tài chính | <https://khtc.uit.edu.vn/> |
+| Công tác sinh viên | <https://ctsv.uit.edu.vn/> |
+| Fanpage UIT | <https://www.facebook.com/UIT.Fanpage> |
+| Cộng đồng sinh viên | <https://www.facebook.com/share/g/1K6MtN9NEf/> |
 
 ## Yêu cầu
 
@@ -41,7 +45,7 @@ npm install
 npm run dev
 ```
 
-Trình duyệt sẽ tự mở trang http://localhost:5173. Nếu không tự mở, hãy truy cập địa chỉ đó thủ công. Dừng server bằng `Ctrl + C`.
+Trình duyệt sẽ tự mở trang <http://localhost:5173>. Nếu không tự mở, hãy truy cập địa chỉ đó thủ công. Dừng server bằng `Ctrl + C`.
 
 ### Chạy bản build (nhẹ và nhanh hơn)
 
@@ -111,7 +115,7 @@ uit-hub/
 
 | Vấn đề | Cách xử lý |
 | --- | --- |
-| `npm: command not found` | Chưa cài Node.js. Tải tại https://nodejs.org rồi mở lại terminal. |
+| `npm: command not found` | Chưa cài Node.js. Tải tại <https://nodejs.org> rồi mở lại terminal. |
 | Cổng 5173 đã bị dùng | Vite sẽ tự chọn cổng khác và in ra trong terminal. Hãy mở đúng địa chỉ đó. |
 | Nút "Mở tất cả" chỉ mở được một tab | Trình duyệt chặn pop-up. Bấm vào biểu tượng chặn trên thanh địa chỉ và chọn cho phép `localhost`. |
 | Link Facebook yêu cầu đăng nhập | Bình thường, Facebook cần bạn đăng nhập (nhóm cộng đồng có thể cần được duyệt tham gia). |
