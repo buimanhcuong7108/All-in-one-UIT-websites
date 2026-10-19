@@ -4,7 +4,8 @@ Trang chủ cá nhân tổng hợp các website của **Trường Đại học C
 
 Tác giả: **Bùi Mạnh Cường**.\
 MSSV: **26520212**.\
-Lớp sinh hoạt: **KHMT2026.1**.
+Lớp sinh hoạt: **KHMT2026.1**.\
+Liên hệ: **bomdeptrai0701@gmail.com**.
 
 > Đây là dự án cá nhân, **không phải** trang chính thức của trường.
 
