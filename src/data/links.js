@@ -30,7 +30,7 @@ export const LINKS = [
     id: 'student',
     title: 'Trang sinh viên',
     description: 'Trang dành cho sinh viên UIT.',
-    url: 'https://student.uit.edu.vn/',
+    url: 'https://portal.uit.edu.vn/trang-chu',
     category: 'main',
     icon: '🎓',
     keywords: ['sinh viên', 'student'],
