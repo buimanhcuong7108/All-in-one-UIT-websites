@@ -2,32 +2,30 @@
 
 Trang chủ cá nhân tổng hợp các website của **Trường Đại học Công nghệ Thông tin – ĐHQG-HCM (UIT)**, chạy trực tiếp trên máy của bạn bằng **React + Vite**.
 
-Tác giả: **Bùi Mạnh Cường**.\
-MSSV: **26520212**.\
-Lớp sinh hoạt: **KHMT2026.1**.\
-Liên hệ: **bomdeptrai0701@gmail.com**.
-
 > Đây là dự án cá nhân, **không phải** trang chính thức của trường.
 
 ## Tính năng
 
-- Gom toàn bộ link của trường vào một trang, chia nhóm rõ ràng (Cổng chính / Phòng ban / Cộng đồng)
-- Tìm kiếm nhanh, **không cần gõ dấu** (gõ `hoc phi` vẫn ra "học phí")
-- Đánh dấu ⭐ yêu thích, được lưu lại trong trình duyệt
+- Mỗi trang là một **thẻ màu riêng** với chữ lớn là tên miền con (`portal`, `student`, `khtc`…), nhìn là nhận ra ngay
+- Bố cục "bento": trang quan trọng nhất (Portal) có thẻ lớn nhất
+- Lọc nhanh theo nhóm: Cổng chính / Phòng ban / Cộng đồng / Đã ghim
+- Tìm kiếm nhanh, **không cần gõ dấu** (gõ `hoc phi` vẫn ra "học phí"), có sẵn gợi ý bấm một chạm
+- Ghim trang hay dùng bằng biểu tượng đánh dấu ở góc thẻ, được lưu trong trình duyệt
 - Giao diện sáng / tối, tự theo hệ thống ở lần đầu
-- Phím tắt, nút "Mở tất cả", giao diện dùng tốt trên điện thoại
-- Thêm / sửa / xoá link chỉ bằng cách sửa **một file dữ liệu**
+- Phím tắt, nút "Mở tất cả", dùng tốt trên điện thoại
+- Phông chữ đóng gói sẵn (Bricolage Grotesque + Be Vietnam Pro), chạy offline vẫn đúng giao diện
+- Thêm / sửa / xoá link, đổi màu thẻ chỉ bằng cách sửa **một file dữ liệu**
 
 ## Các trang đang có
 
 | Trang | Địa chỉ |
 | --- | --- |
-| Portal UIT | <https://portal.uit.edu.vn/> |
-| Trang sinh viên | <https://student.uit.edu.vn/> |
-| Phòng Kế hoạch - Tài chính | <https://khtc.uit.edu.vn/> |
-| Công tác sinh viên | <https://ctsv.uit.edu.vn/> |
-| Fanpage UIT | <https://www.facebook.com/UIT.Fanpage> |
-| Cộng đồng sinh viên | <https://www.facebook.com/share/g/1K6MtN9NEf/> |
+| Portal UIT | https://portal.uit.edu.vn/ |
+| Trang sinh viên | https://student.uit.edu.vn/ |
+| Phòng Kế hoạch - Tài chính | https://khtc.uit.edu.vn/ |
+| Công tác sinh viên | https://ctsv.uit.edu.vn/ |
+| Fanpage UIT | https://www.facebook.com/UIT.Fanpage |
+| Cộng đồng sinh viên | https://www.facebook.com/share/g/1K6MtN9NEf/ |
 
 ## Yêu cầu
 
@@ -46,7 +44,7 @@ npm install
 npm run dev
 ```
 
-Trình duyệt sẽ tự mở trang <http://localhost:5173>. Nếu không tự mở, hãy truy cập địa chỉ đó thủ công. Dừng server bằng `Ctrl + C`.
+Trình duyệt sẽ tự mở trang http://localhost:5173. Nếu không tự mở, hãy truy cập địa chỉ đó thủ công. Dừng server bằng `Ctrl + C`.
 
 ### Chạy bản build (nhẹ và nhanh hơn)
 
@@ -75,10 +73,14 @@ Mở file `src/data/links.js` và chỉnh mảng `LINKS`. Ví dụ thêm một t
   description: 'Mô tả ngắn.',
   url: 'https://example.uit.edu.vn/',
   category: 'office',                  // main | office | community
-  icon: '📚',                          // một emoji bất kỳ
+  word: 'courses',                     // chữ lớn trên thẻ, nên ngắn (tối đa khoảng 10 ký tự)
+  color: '#0B7285',                    // màu thẻ dạng #RRGGBB (chữ trắng/đen tự chọn theo độ sáng)
+  size: 'md',                          // tuỳ chọn: 'lg' = thẻ lớn, 'md' = thẻ thường (mặc định)
   keywords: ['từ khoá', 'tìm kiếm'],   // tuỳ chọn
 }
 ```
+
+Mẹo: chỉ nên để **một** thẻ `size: 'lg'` để bố cục luôn cân đối. Chọn màu đủ đậm (hoặc đủ sáng như màu vàng) để chữ trên thẻ dễ đọc.
 
 Muốn thêm nhóm mới, thêm một mục vào mảng `CATEGORIES` trong cùng file, rồi dùng `id` của nhóm đó ở trường `category`.
 
@@ -86,7 +88,9 @@ Lưu file, trang sẽ tự cập nhật ngay (khi đang chạy `npm run dev`).
 
 ## Đổi màu giao diện
 
-Mở `src/styles.css`, chỉnh các biến màu ở đầu file (`--primary`, `--bg`, …). Khối `:root` là giao diện sáng, khối `:root[data-theme='dark']` là giao diện tối.
+- **Màu từng thẻ:** sửa trường `color` trong `src/data/links.js`.
+- **Màu nền, chữ, viền:** mở `src/styles.css`, chỉnh các biến ở đầu file (`--bg`, `--ink`, `--line`, …). Khối `:root` là giao diện sáng, khối `:root[data-theme='dark']` là giao diện tối.
+- **Phông chữ:** khai báo ở biến `--display` (tiêu đề, chữ lớn) và `--body` (nội dung) trong `src/styles.css`.
 
 ## Đặt làm trang chủ trình duyệt
 
@@ -106,8 +110,8 @@ uit-hub/
 │   └── favicon.svg       # Biểu tượng tab
 └── src/
     ├── main.jsx          # Điểm khởi động React
-    ├── App.jsx           # Giao diện và logic chính
-    ├── styles.css        # Toàn bộ CSS
+    ├── App.jsx           # Giao diện và logic chính (tìm kiếm, lọc, ghim, thẻ)
+    ├── styles.css        # Toàn bộ CSS (màu, bố cục bento, sáng/tối)
     └── data/
         └── links.js      # ✏️ Danh sách link (file bạn sẽ sửa nhiều nhất)
 ```
@@ -116,7 +120,7 @@ uit-hub/
 
 | Vấn đề | Cách xử lý |
 | --- | --- |
-| `npm: command not found` | Chưa cài Node.js. Tải tại <https://nodejs.org> rồi mở lại terminal. |
+| `npm: command not found` | Chưa cài Node.js. Tải tại https://nodejs.org rồi mở lại terminal. |
 | Cổng 5173 đã bị dùng | Vite sẽ tự chọn cổng khác và in ra trong terminal. Hãy mở đúng địa chỉ đó. |
 | Nút "Mở tất cả" chỉ mở được một tab | Trình duyệt chặn pop-up. Bấm vào biểu tượng chặn trên thanh địa chỉ và chọn cho phép `localhost`. |
 | Link Facebook yêu cầu đăng nhập | Bình thường, Facebook cần bạn đăng nhập (nhóm cộng đồng có thể cần được duyệt tham gia). |
@@ -131,4 +135,4 @@ uit-hub/
 
 ## Công nghệ
 
-[React 18](https://react.dev/) · [Vite 5](https://vitejs.dev/) · CSS thuần (không dùng thư viện UI)
+[React 18](https://react.dev/) · [Vite 5](https://vitejs.dev/) · CSS thuần (không dùng thư viện UI) · phông chữ qua [Fontsource](https://fontsource.org/)
