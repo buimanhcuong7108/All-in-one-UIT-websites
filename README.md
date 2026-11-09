@@ -21,7 +21,7 @@ Trang chủ cá nhân tổng hợp các website của **Trường Đại học C
 | Trang | Địa chỉ |
 | --- | --- |
 | Portal UIT | https://portal.uit.edu.vn/ |
-| Trang sinh viên | https://student.uit.edu.vn/ |
+| Trang sinh viên | https://portal.uit.edu.vn/trang-chu |
 | Phòng Kế hoạch - Tài chính | https://khtc.uit.edu.vn/ |
 | Công tác sinh viên | https://ctsv.uit.edu.vn/ |
 | Fanpage UIT | https://www.facebook.com/UIT.Fanpage |
